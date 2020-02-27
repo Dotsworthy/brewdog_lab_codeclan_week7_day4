@@ -5,6 +5,7 @@
     <div class="content-wrapper">
     <beers-list :beers="beers"></beers-list>
     <beer-detail :beer="selectedBeer"></beer-detail>
+    <beer-favourites :beers="favouriteBeers"></beer-favourites>
   </div>
   </div>
 </template>
@@ -12,9 +13,7 @@
 <script>
 import { eventBus } from './main.js'
 import BeerDetail from './components/BeerDetail'
-import BeerFavourites from './components/BeerFavourites'
 import BeerList from './components/BeerList'
-import ListItem from './components/ListItem'
 
 export default {
   data(){
@@ -27,8 +26,7 @@ export default {
   components: {
     "beers-list": BeerList,
     "beer-detail": BeerDetail,
-    "beer-favourites": BeerFavourites,
-    "list-item": ListItem,
+    "beer-favourites": BeerList
   },
   mounted(){
     fetch('https://api.punkapi.com/v2/beers')
@@ -36,10 +34,11 @@ export default {
     .then(beers => this.beers = beers)
 
     eventBus.$on('beer-selected',(beer)=>{
-      this.selectedBeer=beer;
+    this.selectedBeer=beer;
+    })
 
-      eventBus.$on('beer-favourited', (beer) =>
-    this.favouriteBeers.push(beer))
+    eventBus.$on('beer-favourited', (beer) => {
+    this.favouriteBeers.push(beer)
     })
   }
 }

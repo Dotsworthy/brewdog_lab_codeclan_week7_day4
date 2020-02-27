@@ -11,7 +11,7 @@ import { eventBus } from '../main.js'
 
 export default {
   name:'beer-detail',
-  props:['beer', 'favouriteBeers'],
+  props:['beer'],
   methods: {
     addToFavourites(){
       eventBus.$emit("beer-favourited", this.beer)
