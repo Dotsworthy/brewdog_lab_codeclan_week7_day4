@@ -3,6 +3,7 @@
     <title>Brewdog Lab</title>
     <h1>Brewdog Lab</h1>
     <beers-list :beers="beers"></beers-list>
+    <beer-detail :beer="selectedBeer"></beer-detail>
   </div>
 </template>
 
@@ -30,6 +31,10 @@ export default {
     fetch('https://api.punkapi.com/v2/beers')
     .then(res => res.json())
     .then(beers => this.beers = beers)
+
+    eventBus.$on('beer-selected',(beer)=>{
+      this.selectedBeer=beer;
+    })
   }
 }
 
