@@ -1,7 +1,10 @@
 <template>
   <div id="app">
     <title>Brewdog Lab</title>
+    <div class='title-wrapper'>
+      <img src="" alt="">
     <h1>Brewdog Lab</h1>
+  </div>
     <div class="content-wrapper">
     <beers-list :beers="beers"></beers-list>
     <beer-detail :beer="selectedBeer"></beer-detail>
@@ -29,7 +32,7 @@ export default {
     "beer-favourites": BeerList
   },
   mounted(){
-    fetch('https://api.punkapi.com/v2/beers')
+    fetch('https://api.punkapi.com/v2/beers?page=1&per_page=20')
     .then(res => res.json())
     .then(beers => this.beers = beers)
 
@@ -39,6 +42,11 @@ export default {
 
     eventBus.$on('beer-favourited', (beer) => {
     this.favouriteBeers.push(beer)
+    })
+
+    eventBus.$on('beer-to-remove', (beer) => {
+      let beer_index = this.favouriteBeers.indexOf(beer)
+      this.favouriteBeers.splice(beer_index,1)
     })
   }
 }
@@ -56,5 +64,9 @@ export default {
 .content-wrapper{
   display: flex;
   padding: 15px;
+}
+
+.title-wrapper{
+  background-color:
 }
 </style>
