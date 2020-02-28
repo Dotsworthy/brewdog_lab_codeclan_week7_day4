@@ -7,8 +7,12 @@
   </div>
     <div class="content-wrapper">
     <beers-list :beers="beers"></beers-list>
-    <beer-detail :beer="selectedBeer"></beer-detail>
+    <beer-detail :beer="selectedBeer" :favouriteBeers="favouriteBeers"></beer-detail>
     <beer-favourites :beers="favouriteBeers"></beer-favourites>
+  </div>
+    <div class="button-wrapper">
+    <button>Previous Page</button>
+    <button>Next Page</button>
   </div>
   </div>
 </template>
@@ -51,7 +55,6 @@ export default {
     })
   }
 }
-
 
 </script>
 

@@ -4,8 +4,8 @@
 <p>{{beer.tagline}}</p>
 <p>{{beer.abv}}% AVB</p>
 <p>Ingredients: {{getIngredients()}}</p>
-<button v-on:click="addToFavourites">Add Beer</button>
-<button v-on:click="removeFromFavourites" > Remove from Favourites </button>
+<button v-if="includesBeer() == false" v-on:click="addToFavourites">Add Beer</button>
+<button v-if="includesBeer()" v-on:click="removeFromFavourites" > Remove from Favourites </button>
 </div>
 </template>
 
@@ -40,9 +40,12 @@ export default {
       ingredientArray.push(this.beer.ingredients.yeast)
       let result = ingredientArray.join(', ');
       return result;
+    },
+    includesBeer() {
+      return this.favouriteBeers.includes(this.beer)
+      }
     }
   }
-}
 
 </script>
 
