@@ -11,8 +11,8 @@
     <beer-favourites :beers="favouriteBeers"></beer-favourites>
   </div>
     <div class="button-wrapper">
-    <button>Previous Page</button>
-    <button>Next Page</button>
+    <button v-on:click="previous_page()">Previous Page</button>
+    <button v-on:click="next_page()">Next Page</button>
   </div>
   </div>
 </template>
@@ -27,7 +27,8 @@ export default {
     return {
       beers: [],
       selectedBeer: null,
-      favouriteBeers: []
+      favouriteBeers: [],
+      pageNumber: 1
     }
   },
   components: {
@@ -53,6 +54,22 @@ export default {
       if (beer_index > -1) {this.favouriteBeers.splice(beer_index,1)
       this.selectedBeer = null}
     })
+  },
+  methods: {
+    previous_page() {
+      if (this.pageNumber > 1) {this.pageNumber -= 1}
+      let url = `https://api.punkapi.com/v2/beers?page=${this.pageNumber}&per_page=20`
+      fetch(`${url}`)
+      .then(res => res.json())
+      .then(beers => this.beers = beers)
+    },
+    next_page() {
+      if (this.pageNumber <17) {this.pageNumber += 1}
+      let url = `https://api.punkapi.com/v2/beers?page=${this.pageNumber}&per_page=20`
+      fetch(`${url}`)
+      .then(res => res.json())
+      .then(beers => this.beers = beers)
+    }
   }
 }
 
