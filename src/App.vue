@@ -14,15 +14,15 @@
 
       <div id="beers-list" class="tabcontent">
           <h1>Beers</h1>
-          <beers-list :beers="beers"></beers-list>
           <button v-on:click="previous_page()">Previous Page</button>
           <button v-on:click="next_page()">Next Page</button>
           <p>{{pageNumber}}/17</p>
+          <beers-list :beers="beers"></beers-list>
       </div>
 
       <div id="favourites" class="tabcontent">
-            <p>Favourites</p>
-            <beers-list :beers="favouriteBeers"></beers-list>
+          <h1>Favourites</h1>
+          <beers-list :beers="favouriteBeers"></beers-list>
       </div>
 
 
@@ -73,6 +73,8 @@ export default {
       if (beer_index > -1) {this.favouriteBeers.splice(beer_index,1)
       this.selectedBeer = null}
     })
+    this.openDefaultTab('defaultOpen');
+
   },
   methods: {
     previous_page() {
@@ -105,45 +107,57 @@ export default {
   document.getElementById(pageName).style.display = "block";
   event.currentTarget.className += " active";
 },
-openDefaultTab(tabId) {
+  openDefaultTab(tabId) {
   document.getElementById(tabId).click();
-}
+  }
   }
 }
 
 </script>
 
 <style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   display: grid;
   grid-template-columns: 25% 75%;
-  background-color: dodgerblue;
+  background-color: #CA5310;
 }
 
 #sidebar-wrapper {
   background-color: #F2F3F4;
   height: 100vh;
+  padding: 10%;;
 }
 
 #beer-detail {
   border: 2px solid black;
   border-radius: 50px;
+  padding: 10%;
 }
 
 .title-bar {
   display: flex;
+  padding: 2px;
+  margin: 2px;
 }
 
 
 .content-wrapper {
   display: grid;
+  padding: 2px;
+  margin: 2px;
 }
 
 .logo {
-  height: 100px;
+  height: 9vh;
   width: auto;
 }
 
