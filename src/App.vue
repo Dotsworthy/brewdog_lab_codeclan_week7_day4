@@ -1,18 +1,24 @@
 <template>
   <div id="app">
     <title>Brewdog Lab</title>
-    <div class='title-wrapper'>
-      <img src="" alt="">
-    <h1>Brewdog Lab</h1>
-  </div>
-    <div class="content-wrapper">
+    <div id='sidebar-wrapper'>
+      <div class="title-bar">
+        <img class="logo" src="../public/logo.jpg" alt="Brewdog Lab">
+        <h1>Brewdog Lab</h1>
+      </div>
     <beers-list :beers="beers"></beers-list>
-    <beer-detail :beer="selectedBeer" :favouriteBeers="favouriteBeers"></beer-detail>
-    <beer-favourites :beers="favouriteBeers"></beer-favourites>
-  </div>
-    <div class="button-wrapper">
     <button v-on:click="previous_page()">Previous Page</button>
     <button v-on:click="next_page()">Next Page</button>
+    <p>{{pageNumber}}/17</p>
+  </div>
+    <div class="content-wrapper">
+      <div>
+    <beer-detail id="beer-detail" :beer="selectedBeer" :favouriteBeers="favouriteBeers"></beer-detail>
+  </div>
+  <div>
+    <p>Favourites</p>
+    <beer-favourites :beers="favouriteBeers"></beer-favourites>
+  </div>
   </div>
   </div>
 </template>
@@ -80,14 +86,33 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: grid;
+  grid-template-columns: 25% 75%;
+  background-color: dodgerblue;
 }
 
-.content-wrapper{
+#sidebar-wrapper {
+  background-color: #F2F3F4;
+}
+
+#beer-detail {
+  border: 2px solid black;
+  border-radius: 50px;
+}
+
+.title-bar {
   display: flex;
-  padding: 15px;
 }
 
-.title-wrapper{
-  background-color:
+
+.content-wrapper {
+  display: grid;
+  grid-template-columns: 25% 50% 25%;
 }
+
+.logo {
+  height: 100px;
+  width: auto;
+}
+
 </style>

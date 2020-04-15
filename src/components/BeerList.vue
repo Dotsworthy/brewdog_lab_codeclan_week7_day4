@@ -24,4 +24,12 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
+ul {
+  list-style-type: none;
+  font-weight: bold;
+  transform: skewY(-11deg);
+
+}
+
 </style>

@@ -1,8 +1,10 @@
 <template lang="html">
 <div v-if="beer" id="BeerDetail">
+<img class="beer-image" v-bind:src="beer.image_url" v-bind:alt="beer.name">
 <h2>{{beer.name}}</h2>
 <p>{{beer.tagline}}</p>
 <p>{{beer.abv}}% AVB</p>
+<p>{{beer.description}}</p>
 <p>Ingredients: {{getIngredients()}}</p>
 <button v-if="includesBeer() == false" v-on:click="addToFavourites">Add Beer</button>
 <button v-if="includesBeer()" v-on:click="removeFromFavourites" > Remove from Favourites </button>
@@ -50,4 +52,12 @@ export default {
 </script>
 
 <style lang="css" scoped>
+.beer-image {
+  height: 125px;
+  width: auto;
+}
+
+h2 {
+  transform: skewY(-11deg);
+}
 </style>
