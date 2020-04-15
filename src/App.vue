@@ -6,19 +6,33 @@
         <img class="logo" src="../public/logo.jpg" alt="Brewdog Lab">
         <h1>Brewdog Lab</h1>
       </div>
-    <beers-list :beers="beers"></beers-list>
-    <button v-on:click="previous_page()">Previous Page</button>
-    <button v-on:click="next_page()">Next Page</button>
-    <p>{{pageNumber}}/17</p>
-  </div>
+
+        <div class="tab">
+      <button class="tablinks" v-on:click="openTab('beers-list')" id="defaultOpen">Beers</button>
+      <button class="tablinks" v-on:click="openTab('favourites')">Favourites</button>
+      </div>
+
+      <div id="beers-list" class="tabcontent">
+          <h1>Beers</h1>
+          <beers-list :beers="beers"></beers-list>
+          <button v-on:click="previous_page()">Previous Page</button>
+          <button v-on:click="next_page()">Next Page</button>
+          <p>{{pageNumber}}/17</p>
+      </div>
+
+      <div id="favourites" class="tabcontent">
+            <p>Favourites</p>
+            <beers-list :beers="favouriteBeers"></beers-list>
+      </div>
+
+
+    </div>
+
     <div class="content-wrapper">
       <div>
     <beer-detail id="beer-detail" :beer="selectedBeer" :favouriteBeers="favouriteBeers"></beer-detail>
   </div>
-  <div>
-    <p>Favourites</p>
-    <beer-favourites :beers="favouriteBeers"></beer-favourites>
-  </div>
+
   </div>
   </div>
 </template>
@@ -40,7 +54,6 @@ export default {
   components: {
     "beers-list": BeerList,
     "beer-detail": BeerDetail,
-    "beer-favourites": BeerList
   },
   mounted(){
     fetch('https://api.punkapi.com/v2/beers?page=1&per_page=20')
@@ -75,7 +88,26 @@ export default {
       fetch(`${url}`)
       .then(res => res.json())
       .then(beers => this.beers = beers)
-    }
+    },
+    openTab(pageName) {
+  let index, tabcontent, tablinks;
+
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (index = 0; index < tabcontent.length; index++) {
+    tabcontent[index].style.display = "none";
+  }
+
+  tablinks = document.getElementsByClassName("tablinks");
+  for (index = 0; index < tablinks.length; index++) {
+    tablinks[index].className = tablinks[index].className.replace(" active", "");
+  }
+
+  document.getElementById(pageName).style.display = "block";
+  event.currentTarget.className += " active";
+},
+openDefaultTab(tabId) {
+  document.getElementById(tabId).click();
+}
   }
 }
 
@@ -93,6 +125,7 @@ export default {
 
 #sidebar-wrapper {
   background-color: #F2F3F4;
+  height: 100vh;
 }
 
 #beer-detail {
@@ -107,12 +140,16 @@ export default {
 
 .content-wrapper {
   display: grid;
-  grid-template-columns: 25% 50% 25%;
 }
 
 .logo {
   height: 100px;
   width: auto;
+}
+
+.tab {
+  overflow: hidden;
+  text-align: center;
 }
 
 </style>
