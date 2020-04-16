@@ -1,26 +1,24 @@
 <template>
   <div id="app">
     <title>Brewdog Lab</title>
-    <div class="content-wrapper">
 
+    <div id='sidebar-wrapper'>
+      <div class="title-bar">
+        <img class="logo" src="../public/logo.png" alt="Brewdog Lab">
+      </div>
 
-      <div id='sidebar-wrapper'>
-        <div class="title-bar">
-          <img class="logo" src="../public/logo.png" alt="Brewdog Lab">
-        </div>
+      <div class="tab">
+        <button class="tablinks" v-on:click="openTab('beers-list')" id="defaultOpen">Beers</button>
+        <button class="tablinks" v-on:click="openTab('favourites')">Favourites</button>
+      </div>
 
-        <div class="tab">
-          <button class="tablinks" v-on:click="openTab('beers-list')" id="defaultOpen">Beers</button>
-          <button class="tablinks" v-on:click="openTab('favourites')">Favourites</button>
-        </div>
+      <div id="beers-list" class="tabcontent">
+        <h1 class="title">Beer Catalogue</h1>
+        <button v-on:click="previous_page()">Previous Page</button>
+        <button v-on:click="next_page()">Next Page</button>
+        <beers-list :beers="beers"></beers-list>
+      </div>
 
-        <div id="beers-list" class="tabcontent">
-          <h1 class="title">Beer Catalogue</h1>
-          <button v-on:click="previous_page()">Previous Page</button>
-          <button v-on:click="next_page()">Next Page</button>
-          <beers-list :beers="beers"></beers-list>
-        </div>
-        </div>
 
 
     <div id="favourites" class="tabcontent">
@@ -31,8 +29,6 @@
   <div class="content-wrapper">
     <beer-detail id="beer-detail" :beer="selectedBeer" :favouriteBeers="favouriteBeers"></beer-detail>
   </div>
-</div>
-</div>
 </div>
 </template>
 
