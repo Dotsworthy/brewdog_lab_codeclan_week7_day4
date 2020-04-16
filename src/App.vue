@@ -1,32 +1,39 @@
 <template>
   <div id="app">
     <title>Brewdog Lab</title>
-    <div id='sidebar-wrapper'>
-      <div class="title-bar">
-        <img class="logo" src="../public/logo.png" alt="Brewdog Lab">
-      </div>
+    <div class="content-wrapper">
+
+
+      <div id='sidebar-wrapper'>
+        <div class="title-bar">
+          <img class="logo" src="../public/logo.png" alt="Brewdog Lab">
+        </div>
 
         <div class="tab">
-      <button class="tablinks" v-on:click="openTab('beers-list')" id="defaultOpen">Beers</button>
-      <button class="tablinks" v-on:click="openTab('favourites')">Favourites</button>
-      </div>
+          <button class="tablinks" v-on:click="openTab('beers-list')" id="defaultOpen">Beers</button>
+          <button class="tablinks" v-on:click="openTab('favourites')">Favourites</button>
+        </div>
 
-      <div id="beers-list" class="tabcontent">
+        <div id="beers-list" class="tabcontent">
           <h1 class="title">Beer Catalogue</h1>
           <button v-on:click="previous_page()">Previous Page</button>
           <button v-on:click="next_page()">Next Page</button>
           <beers-list :beers="beers"></beers-list>
-      </div>
+        </div>
+        </div>
 
-      <div id="favourites" class="tabcontent">
-          <h1>Favourites</h1>
-          <beers-list :beers="favouriteBeers"></beers-list>
-      </div>
-    </div>
-    <div class="content-wrapper">
-    <beer-detail id="beer-detail" :beer="selectedBeer" :favouriteBeers="favouriteBeers"></beer-detail>
+
+    <div id="favourites" class="tabcontent">
+      <h1>Favourites</h1>
+      <beers-list :beers="favouriteBeers"></beers-list>
     </div>
   </div>
+  <div class="content-wrapper">
+    <beer-detail id="beer-detail" :beer="selectedBeer" :favouriteBeers="favouriteBeers"></beer-detail>
+  </div>
+</div>
+</div>
+</div>
 </template>
 
 <script>
@@ -121,6 +128,7 @@ export default {
   grid-template-columns: 350px 1fr;
   background-color: #49516F;
   overflow: scroll;
+  font-size: 14px;
 }
 
 #sidebar-wrapper {
@@ -131,7 +139,7 @@ export default {
 }
 
 #beer-detail {
-  padding: 12.5%;
+  padding: 100px;
   color: white;
   height: 100vh;
 }

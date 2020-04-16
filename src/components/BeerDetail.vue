@@ -63,7 +63,7 @@ export default {
 <style lang="css" scoped>
 
 .beer-image {
-  height: 90%;
+  height: 500px;
   width: auto;
 }
 
@@ -71,6 +71,7 @@ export default {
   display: grid;
   grid-template-columns: 50% 50%;
   justify-items: center;
+  width: 816px;
 }
 
 .favourites {
@@ -86,7 +87,7 @@ export default {
 
 .beer-content {
   letter-spacing: 1px;
-  padding: 10%;
+  padding: 45px;
 }
 
 
