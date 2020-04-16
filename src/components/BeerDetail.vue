@@ -7,8 +7,8 @@
         <h1 class="title">{{beer.name}}</h1>
         <p>{{beer.tagline}}</p>
         <p>{{beer.abv}}% AVB</p>
-        <button v-if="includesBeer() == false" v-on:click="addToFavourites">Add Beer</button>
-        <button v-if="includesBeer()" v-on:click="removeFromFavourites" > Remove from Favourites </button>
+        <button class="favourites" v-if="includesBeer() == false" v-on:click="addToFavourites">Add to Favourites</button>
+        <button class="favourites" v-if="includesBeer()" v-on:click="removeFromFavourites" > Remove from Favourites </button>
         <br>
         <p>{{beer.description}}</p>
         <br>
@@ -77,8 +77,14 @@ export default {
   justify-items: center;
 }
 
-.title {
-
+.favourites {
+border: none;
+font-family: Avenir;
+color: white;
+background-color: inherit;
+cursor: pointer;
+font-size: 16px;
+padding: 10px 0px;
 }
 
 .beer-content {

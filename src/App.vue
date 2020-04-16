@@ -68,8 +68,7 @@ export default {
 
     eventBus.$on('beer-to-remove', (beer) => {
       let beer_index = this.favouriteBeers.indexOf(beer)
-      if (beer_index > -1) {this.favouriteBeers.splice(beer_index,1)
-      this.selectedBeer = null}
+      if (beer_index > -1) {this.favouriteBeers.splice(beer_index,1)}
     })
     this.openDefaultTab('defaultOpen');
 
