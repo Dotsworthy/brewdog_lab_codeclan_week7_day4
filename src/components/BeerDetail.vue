@@ -2,20 +2,22 @@
   <div v-if="beer" id="BeerDetail">
     <div class="title-wrapper">
       <img class="beer-image" v-bind:src="beer.image_url" v-bind:alt="beer.name">
-      <div class="">
-        <h1>{{beer.name}}</h1>
+
+      <div class="beer-content">
+        <h1 class="title">{{beer.name}}</h1>
         <p>{{beer.tagline}}</p>
         <p>{{beer.abv}}% AVB</p>
+        <button v-if="includesBeer() == false" v-on:click="addToFavourites">Add Beer</button>
+        <button v-if="includesBeer()" v-on:click="removeFromFavourites" > Remove from Favourites </button>
+        <br>
         <p>{{beer.description}}</p>
+        <br>
         <p>Ingredients: {{getIngredients()}}</p>
       </div>
-
+      </div>
     </div>
-    
 
-    <button v-if="includesBeer() == false" v-on:click="addToFavourites">Add Beer</button>
-    <button v-if="includesBeer()" v-on:click="removeFromFavourites" > Remove from Favourites </button>
-  </div>
+
 </template>
 
 <script>
@@ -60,6 +62,10 @@ export default {
 
 <style lang="css" scoped>
 
+#beer-detail {
+  height: 95vh;
+}
+
 .beer-image {
   height: 40vh;
   width: auto;
@@ -71,8 +77,15 @@ export default {
   justify-items: center;
 }
 
-h2 {
-
+.title {
 
 }
+
+.beer-content {
+
+  letter-spacing: 1px;
+  padding: 10%;
+}
+
+
 </style>

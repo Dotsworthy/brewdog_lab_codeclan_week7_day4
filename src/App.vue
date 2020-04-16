@@ -15,7 +15,6 @@
           <h1 class="title">Beer Catalogue</h1>
           <button v-on:click="previous_page()">Previous Page</button>
           <button v-on:click="next_page()">Next Page</button>
-          <p>{{pageNumber}}/17</p>
           <beers-list :beers="beers"></beers-list>
       </div>
 
@@ -146,6 +145,16 @@ export default {
 
 #favourites {
   transform: skewY(-11deg);
+}
+
+button {
+  background-color: #4CAF50; /* Green */
+border: 1px solid black;
+color: white;
+margin: 2px;
+padding: 10px 16px;
+text-align: center;
+text-decoration: none;
 }
 
 .tab {
