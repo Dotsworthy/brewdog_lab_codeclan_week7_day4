@@ -24,10 +24,8 @@
       </div>
     </div>
     <div class="content-wrapper">
-      <div>
     <beer-detail id="beer-detail" :beer="selectedBeer" :favouriteBeers="favouriteBeers"></beer-detail>
-  </div>
-  </div>
+    </div>
   </div>
 </template>
 
@@ -120,8 +118,9 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   display: grid;
-  grid-template-columns: 25% 75%;
+  grid-template-columns: 350px 1fr;
   background-color: #49516F;
+  overflow: scroll;
 }
 
 #sidebar-wrapper {
@@ -132,9 +131,9 @@ export default {
 }
 
 #beer-detail {
-  padding: 10%;
+  padding: 12.5%;
   color: white;
-  height: auto;
+  height: 100vh;
 }
 
 #beers-list {
@@ -165,15 +164,12 @@ text-decoration: none;
   justify-content: center;
 }
 
-
 .content-wrapper {
   display: grid;
-  padding: 2px;
-  margin: 2px;
 }
 
 .logo {
-  height: 9vh;
+  height: 100px;
   width: auto;
   margin-bottom: 5px;
 }

@@ -62,14 +62,9 @@ export default {
 
 <style lang="css" scoped>
 
-#beer-detail {
-  height: 95vh;
-}
-
 .beer-image {
-  height: 40vh;
+  height: 90%;
   width: auto;
-  margin: 25%;
 }
 
 .title-wrapper {
