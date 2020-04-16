@@ -14,8 +14,8 @@
         <br>
         <p>Ingredients: {{getIngredients()}}</p>
       </div>
-      </div>
     </div>
+  </div>
 
 
 </template>
@@ -54,9 +54,9 @@ export default {
     },
     includesBeer() {
       return this.favouriteBeers.includes(this.beer)
-      }
     }
   }
+}
 
 </script>
 
@@ -69,6 +69,7 @@ export default {
 .beer-image {
   height: 40vh;
   width: auto;
+  margin: 25%;
 }
 
 .title-wrapper {
@@ -78,17 +79,17 @@ export default {
 }
 
 .favourites {
-border: none;
-font-family: Avenir;
-color: white;
-background-color: inherit;
-cursor: pointer;
-font-size: 16px;
-padding: 10px 0px;
+  border: none;
+  font-family: Avenir;
+  color: white;
+  background-color: inherit;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px 0px;
+  margin: 0px;
 }
 
 .beer-content {
-
   letter-spacing: 1px;
   padding: 10%;
 }
