@@ -126,7 +126,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   display: grid;
   grid-template-columns: 25% 75%;
-  background-color: #CA5310;
+  background-color: #49516F;
 }
 
 #sidebar-wrapper {
@@ -137,10 +137,12 @@ export default {
 
 #beer-detail {
   padding: 10%;
+  color: white;
 }
 
 #beers-list {
   transform: skewY(-11deg);
+  margin-top: 5px;
 }
 
 #favourites {
@@ -148,9 +150,7 @@ export default {
 }
 
 button {
-  background-color: #4CAF50; /* Green */
-border: 1px solid black;
-color: white;
+background-color: inherit;
 margin: 2px;
 padding: 10px 16px;
 text-align: center;
@@ -178,7 +178,7 @@ text-decoration: none;
 .logo {
   height: 9vh;
   width: auto;
-
+  margin-bottom: 5px;
 }
 
 .tab {
