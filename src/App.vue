@@ -22,15 +22,11 @@
           <h1>Favourites</h1>
           <beers-list :beers="favouriteBeers"></beers-list>
       </div>
-
-
     </div>
-
     <div class="content-wrapper">
       <div>
     <beer-detail id="beer-detail" :beer="selectedBeer" :favouriteBeers="favouriteBeers"></beer-detail>
   </div>
-
   </div>
   </div>
 </template>
@@ -131,12 +127,14 @@ export default {
 #sidebar-wrapper {
   background-color: #F2F3F4;
   height: 100vh;
-  padding: 10%;;
+  width: 350px;
+  padding: 50px;
 }
 
 #beer-detail {
   padding: 10%;
   color: white;
+  height: auto;
 }
 
 #beers-list {
