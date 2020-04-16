@@ -1,17 +1,21 @@
 <template lang="html">
-<div v-if="beer" id="BeerDetail">
-  <div class="title-wrapper">
-    <img class="beer-image" v-bind:src="beer.image_url" v-bind:alt="beer.name">
-    <h1>{{beer.name}}</h1>
-  </div>
+  <div v-if="beer" id="BeerDetail">
+    <div class="title-wrapper">
+      <img class="beer-image" v-bind:src="beer.image_url" v-bind:alt="beer.name">
+      <div class="">
+        <h1>{{beer.name}}</h1>
+        <p>{{beer.tagline}}</p>
+        <p>{{beer.abv}}% AVB</p>
+        <p>{{beer.description}}</p>
+        <p>Ingredients: {{getIngredients()}}</p>
+      </div>
 
-<p>{{beer.tagline}}</p>
-<p>{{beer.abv}}% AVB</p>
-<p>{{beer.description}}</p>
-<p>Ingredients: {{getIngredients()}}</p>
-<button v-if="includesBeer() == false" v-on:click="addToFavourites">Add Beer</button>
-<button v-if="includesBeer()" v-on:click="removeFromFavourites" > Remove from Favourites </button>
-</div>
+    </div>
+    
+
+    <button v-if="includesBeer() == false" v-on:click="addToFavourites">Add Beer</button>
+    <button v-if="includesBeer()" v-on:click="removeFromFavourites" > Remove from Favourites </button>
+  </div>
 </template>
 
 <script>
@@ -64,6 +68,7 @@ export default {
 .title-wrapper {
   display: grid;
   grid-template-columns: 50% 50%;
+  justify-items: center;
 }
 
 h2 {

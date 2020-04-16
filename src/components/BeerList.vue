@@ -28,7 +28,6 @@ export default {
 ul {
   list-style-type: none;
   font-weight: bold;
-  transform: skewY(-11deg);
 
 }
 

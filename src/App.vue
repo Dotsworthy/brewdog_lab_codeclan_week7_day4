@@ -3,8 +3,7 @@
     <title>Brewdog Lab</title>
     <div id='sidebar-wrapper'>
       <div class="title-bar">
-        <img class="logo" src="../public/logo.jpg" alt="Brewdog Lab">
-        <h1>Brewdog Lab</h1>
+        <img class="logo" src="../public/logo.png" alt="Brewdog Lab">
       </div>
 
         <div class="tab">
@@ -13,7 +12,7 @@
       </div>
 
       <div id="beers-list" class="tabcontent">
-          <h1>Beers</h1>
+          <h1 class="title">Beer Catalogue</h1>
           <button v-on:click="previous_page()">Previous Page</button>
           <button v-on:click="next_page()">Next Page</button>
           <p>{{pageNumber}}/17</p>
@@ -138,15 +137,26 @@ export default {
 }
 
 #beer-detail {
-  border: 2px solid black;
-  border-radius: 50px;
   padding: 10%;
+}
+
+#beers-list {
+  transform: skewY(-11deg);
+}
+
+#favourites {
+  transform: skewY(-11deg);
+}
+
+.tab {
+  transform: skewY(-11deg);
 }
 
 .title-bar {
   display: flex;
   padding: 2px;
   margin: 2px;
+  justify-content: center;
 }
 
 
@@ -159,6 +169,7 @@ export default {
 .logo {
   height: 9vh;
   width: auto;
+
 }
 
 .tab {
