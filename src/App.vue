@@ -130,7 +130,8 @@ export default {
 #sidebar-wrapper {
   background-color: #F2F3F4;
   height: 100vh;
-  width: 350px;
+  width: 25vw;
+  max-width: 350px;
   padding: 50px;
 }
 
@@ -152,7 +153,7 @@ export default {
 button {
 background-color: inherit;
 margin: 2px;
-padding: 10px 16px;
+padding: 1vh 1.6vw;
 text-align: center;
 text-decoration: none;
 }
