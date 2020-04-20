@@ -113,26 +113,6 @@ export default {
 <style lang="scss">
 
 
-// Breakpoints
-$bp-small: 48em; // 768px
-$bp-medium: 64em; // 1024px
-$bp-large: 85.375em; // 1366px
-$bp-xlarge: 120em; // 1920px
-$bp-xxlarge: 160em; // 2560px
-
-// Media Queries
-$mq-small: "(min-width: #{$bp-small})";
-$mq-medium: "(min-width: #{$bp-medium})";
-$mq-large: "(min-width: #{$bp-large})";
-$mq-xlarge: "(min-width: #{$bp-xlarge})";
-$mq-xxlarge: "(min-width: #{$bp-xxlarge})";
-$mq-retina: "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)";
-
-$base-font-size: 1em;
-
-$base-line-height: 1.5;
-$header-line-height: 1.25;
-
 
 * {
   box-sizing: border-box;
@@ -147,16 +127,39 @@ $header-line-height: 1.25;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   display: grid;
-  grid-template-columns: 350px 1fr;
   background-color: #49516F;
   overflow: scroll;
 
+  font-size: $base-font-size;
+  line-height: $base-line-height;
 
+  @media #{$mq-small} {
+    font-size: $base-font-size*0.7;
+    line-height: $base-line-height*1.1;
+    grid-template-columns: 17em 1fr;
+  }
 
+  @media #{$mq-medium} {
+    font-size: $base-font-size*0.7;
+    line-height: $base-line-height*1.1;
+    grid-template-columns: 22.8em 1fr;
+  }
 
+  @media #{$mq-large} {
+    font-size: $base-font-size*0.8;
+    line-height: $base-line-height*1.1;
+    grid-template-columns: 26.7em 1fr;
+  }
 
+  @media #{$mq-xlarge} {
+    font-size: $base-font-size*1.08;
+    grid-template-columns: 20.1em 1fr;
+  }
 
-
+  @media #{$mq-xxlarge} {
+    font-size: $base-font-size*1.2;
+    grid-template-columns: 19em 1fr;
+  }
 }
 
 #sidebar-wrapper {
@@ -164,7 +167,7 @@ $header-line-height: 1.25;
   height: 100vh;
   width: 25vw;
   max-width: 350px;
-  padding: 50px;
+  padding: 2em;
 }
 
 #beer-detail {
@@ -185,7 +188,7 @@ $header-line-height: 1.25;
 button {
 background-color: inherit;
 margin: 2px;
-padding: 1vh 1.6vw;
+padding: 1em 1.6em;
 text-align: center;
 text-decoration: none;
 }
