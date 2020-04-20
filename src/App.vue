@@ -36,6 +36,7 @@
 import { eventBus } from './main.js'
 import BeerDetail from './components/BeerDetail'
 import BeerList from './components/BeerList'
+import './styles/_variables.scss'
 
 export default {
   data(){
@@ -109,11 +110,36 @@ export default {
 
 </script>
 
-<style>
+<style lang="scss">
+
+
+// Breakpoints
+$bp-small: 48em; // 768px
+$bp-medium: 64em; // 1024px
+$bp-large: 85.375em; // 1366px
+$bp-xlarge: 120em; // 1920px
+$bp-xxlarge: 160em; // 2560px
+
+// Media Queries
+$mq-small: "(min-width: #{$bp-small})";
+$mq-medium: "(min-width: #{$bp-medium})";
+$mq-large: "(min-width: #{$bp-large})";
+$mq-xlarge: "(min-width: #{$bp-xlarge})";
+$mq-xxlarge: "(min-width: #{$bp-xxlarge})";
+$mq-retina: "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)";
+
+$base-font-size: 1em;
+
+$base-line-height: 1.5;
+$header-line-height: 1.25;
+
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+
+
 }
 
 #app {
@@ -124,7 +150,13 @@ export default {
   grid-template-columns: 350px 1fr;
   background-color: #49516F;
   overflow: scroll;
-  font-size: 14px;
+
+
+
+
+
+
+
 }
 
 #sidebar-wrapper {

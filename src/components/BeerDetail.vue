@@ -60,7 +60,7 @@ export default {
 
 </script>
 
-<style lang="css" scoped>
+<style lang="scss" scoped>
 
 .beer-image {
   height: 500px;
