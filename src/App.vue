@@ -8,14 +8,14 @@
       </div>
 
       <div class="tab">
-        <button class="tablinks" v-on:click="openTab('beers-list')" id="defaultOpen">Beers</button>
-        <button class="tablinks" v-on:click="openTab('favourites')">Favourites</button>
+        <button class="navigation button" v-on:click="openTab('beers-list')" id="defaultOpen">Beers</button>
+        <button class="navigation button" v-on:click="openTab('favourites')">Favourites</button>
       </div>
 
       <div id="beers-list" class="tabcontent">
         <h1 class="title">Beer Catalogue</h1>
-        <button v-on:click="previous_page()">Previous Page</button>
-        <button v-on:click="next_page()">Next Page</button>
+        <button class='navigation-button' v-on:click="previous_page()">Previous Page</button>
+        <button class='navigation-button' v-on:click="next_page()">Next Page</button>
         <beers-list :beers="beers"></beers-list>
       </div>
 
@@ -136,7 +136,7 @@ export default {
   @media #{$mq-small} {
     font-size: $base-font-size*0.7;
     line-height: $base-line-height*1.1;
-    grid-template-columns: 17em 1fr;
+    grid-template-columns: 17.1em 1fr;
   }
 
   @media #{$mq-medium} {
@@ -168,12 +168,44 @@ export default {
   width: 25vw;
   max-width: 350px;
   padding: 2em;
+
+  @media #{$mq-small} {
+    padding: 25px;
+  }
+  @media #{$mq-medium} {
+    padding: 18px;
+  }
+  @media #{$mq-large} {
+    padding: 2em;
+  }
+  @media #{$mq-xlarge} {
+    padding: 125px;
+  }
+  @media #{$mq-xxlarge} {
+    padding: 150px;
+  }
 }
 
 #beer-detail {
-  padding: 100px;
+  padding: $base-content-padding;
   color: white;
   height: 100vh;
+
+  @media #{$mq-small} {
+    padding: 25px;
+  }
+  @media #{$mq-medium} {
+    padding: 50px;
+  }
+  @media #{$mq-large} {
+    padding: $base-content-padding;
+  }
+  @media #{$mq-xlarge} {
+    padding: 125px;
+  }
+  @media #{$mq-xxlarge} {
+    padding: 150px;
+  }
 }
 
 #beers-list {
@@ -191,6 +223,27 @@ margin: 2px;
 padding: 1em 1.6em;
 text-align: center;
 text-decoration: none;
+
+@media #{$mq-small} {
+  padding: 9.66px 4px;
+  width: 45%;
+  font-size: $base-font-size*1;
+}
+@media #{$mq-medium} {
+  padding: 7px 13px;
+  width: 45%;
+  font-size: $base-font-size*0.9;
+}
+@media #{$mq-large} {
+  padding: 1em 1.6em;
+}
+@media #{$mq-xlarge} {
+  padding: 125px;
+}
+@media #{$mq-xxlarge} {
+  padding: 150px;
+}
+
 }
 
 .tab {

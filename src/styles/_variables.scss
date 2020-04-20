@@ -10,10 +10,12 @@ $mq-small: "(min-width: #{$bp-small})";
 $mq-medium: "(min-width: #{$bp-medium})";
 $mq-large: "(min-width: #{$bp-large})";
 $mq-xlarge: "(min-width: #{$bp-xlarge})";
-$mq-xxlarge: "(min-width: #{$bp-xxlarge} min-height: 1025px)";
+$mq-xxlarge: "(min-width: #{$bp-xxlarge} min-height: 1081px)";
 $mq-retina: "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)";
 
 $base-font-size: 1em;
 
 $base-line-height: 1.5;
 $header-line-height: 1.25;
+
+$base-content-padding: 100px;
