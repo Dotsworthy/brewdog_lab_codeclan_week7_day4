@@ -35,7 +35,7 @@
       <p> By Andrew Watson <p>
       <p> API by PunkApi </p>
       <br>
-      <p>Welcome to the Brewdog Beer Catalogue. To begin, select a beer from the left hand side. You can also add a beer to your favourites list. As this is an app showcase, these settings aren't saved and will reset when you leave the page. </p>
+      <p>Welcome to the Brewdog Beer Catalogue. To begin, select a beer from the left hand side. You can also add up to 20 beers to your favourites list. As this is an app showcase, these settings aren't saved and will reset when you leave the page. </p>
       <br>
       <p>This app was created for CodeClan under the following brief:</p>
       <br>
@@ -91,7 +91,9 @@ export default {
     })
 
     eventBus.$on('beer-favourited', (beer) => {
+    if (this.favouriteBeers.length < 20) {
     this.favouriteBeers.push(beer)
+      }
     })
 
     eventBus.$on('beer-to-remove', (beer) => {
@@ -143,9 +145,7 @@ export default {
 <style lang="scss">
 
 // TODO:
-// add splash page with brief
 // add limit for favourites and text
-// search function?
 
 * {
   box-sizing: border-box;
