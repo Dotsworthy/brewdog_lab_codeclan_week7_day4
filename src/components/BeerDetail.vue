@@ -95,17 +95,17 @@ export default {
   }
 
   @media #{$mq-xlarge} {
-    height: 750px;
+    height: 670px;
     width: auto;
   }
 
   @media #{$mq-xxwide} {
-    height: 750px;
+    height: 670px;
     width: auto;
   }
 
   @media #{$mq-xxlarge} {
-    height: 1000px;
+    height: 900px;
     width: auto;
   }
 

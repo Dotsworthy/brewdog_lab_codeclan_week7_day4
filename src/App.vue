@@ -126,10 +126,11 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100vh;
   display: grid;
+  overflow: visible;
   background-color: #49516F;
-  margin: 0;
-  padding: 0;
+ 
 
   font-size: $base-font-size;
   line-height: $base-line-height;
@@ -167,7 +168,6 @@ export default {
   background-color: #F2F3F4;
   width: 25vw;
   max-width: 350px;
-  overflow-y: visible;
 }
 
 #sidebar-content {
@@ -195,7 +195,7 @@ export default {
 #beer-detail {
   padding: $base-content-padding;
   color: white;
-  height: 100vh;
+  background-color: #49516F;
 
   @media #{$mq-small} {
     padding: 25px;
