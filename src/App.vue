@@ -144,9 +144,6 @@ export default {
 
 <style lang="scss">
 
-// TODO:
-// add limit for favourites and text
-
 * {
   box-sizing: border-box;
   margin: 0;
