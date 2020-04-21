@@ -3,6 +3,7 @@
     <title>Brewdog Lab</title>
 
     <div id='sidebar-wrapper'>
+      <div id='sidebar-content'>
       <div class="title-bar">
         <img class="logo" src="../public/logo.png" alt="Brewdog Lab">
       </div>
@@ -25,6 +26,7 @@
       <h1>Favourites</h1>
       <beers-list :beers="favouriteBeers"></beers-list>
     </div>
+  </div>
   </div>
   <div class="content-wrapper">
     <beer-detail id="beer-detail" :beer="selectedBeer" :favouriteBeers="favouriteBeers"></beer-detail>
@@ -118,8 +120,6 @@ export default {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-
-
 }
 
 #app {
@@ -128,7 +128,8 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   display: grid;
   background-color: #49516F;
-  overflow: scroll;
+  margin: 0;
+  padding: 0;
 
   font-size: $base-font-size;
   line-height: $base-line-height;
@@ -148,12 +149,12 @@ export default {
   @media #{$mq-large} {
     font-size: $base-font-size*0.8;
     line-height: $base-line-height*1.1;
-    grid-template-columns: 26.7em 1fr;
+    grid-template-columns: 27.2em 1fr;
   }
 
   @media #{$mq-xlarge} {
     font-size: $base-font-size*1.08;
-    grid-template-columns: 20.1em 1fr;
+    grid-template-columns: 20.2em 1fr;
   }
 
   @media #{$mq-xxlarge} {
@@ -164,10 +165,12 @@ export default {
 
 #sidebar-wrapper {
   background-color: #F2F3F4;
-  height: 100vh;
   width: 25vw;
   max-width: 350px;
-  padding: 2em;
+  overflow-y: visible;
+}
+
+#sidebar-content {
 
   @media #{$mq-small} {
     padding: 25px;
@@ -176,13 +179,16 @@ export default {
     padding: 18px;
   }
   @media #{$mq-large} {
-    padding: 2em;
+    padding: 40px;
+    width: 350px;
   }
   @media #{$mq-xlarge} {
-    padding: 125px;
+    padding: 40px;
+    width: 350px;
   }
   @media #{$mq-xxlarge} {
-    padding: 150px;
+    padding: 40px;
+    width: 350px;
   }
 }
 
@@ -220,7 +226,6 @@ export default {
 button {
 background-color: inherit;
 margin: 2px;
-padding: 1em 1.6em;
 text-align: center;
 text-decoration: none;
 
@@ -230,18 +235,24 @@ text-decoration: none;
   font-size: $base-font-size*1;
 }
 @media #{$mq-medium} {
-  padding: 7px 13px;
+  padding: 9px 14px;
   width: 45%;
   font-size: $base-font-size*0.9;
 }
 @media #{$mq-large} {
-  padding: 1em 1.6em;
+  padding: 9px 14px;
+  width: 45%;
+  font-size: 11px;
 }
 @media #{$mq-xlarge} {
-  padding: 125px;
+  padding: 9px 14px;
+  width: 45%;
+  font-size: 11px;
 }
 @media #{$mq-xxlarge} {
-  padding: 150px;
+  padding: 9px 14px;
+  width: 45%;
+  font-size: 11px;
 }
 
 }
