@@ -138,13 +138,13 @@ export default {
   @media #{$mq-small} {
     font-size: $base-font-size*0.7;
     line-height: $base-line-height*1.1;
-    grid-template-columns: 17.1em 1fr;
+    grid-template-columns: 200px 1fr;
   }
 
   @media #{$mq-medium} {
     font-size: $base-font-size*0.7;
     line-height: $base-line-height*1.1;
-    grid-template-columns: 22.8em 1fr;
+    grid-template-columns: 250px 1fr;
   }
 
   @media #{$mq-large} {
@@ -166,17 +166,17 @@ export default {
 
 #sidebar-wrapper {
   background-color: #F2F3F4;
-  width: 25vw;
-  max-width: 350px;
 }
 
 #sidebar-content {
 
   @media #{$mq-small} {
     padding: 25px;
+    width: 200px;
   }
   @media #{$mq-medium} {
-    padding: 18px;
+    padding: 25px;
+    width: 250px;
   }
   @media #{$mq-large} {
     padding: 40px;
@@ -230,27 +230,27 @@ text-align: center;
 text-decoration: none;
 
 @media #{$mq-small} {
-  padding: 9.66px 4px;
+  padding: 10px 6px;
   width: 45%;
   font-size: $base-font-size*1;
 }
 @media #{$mq-medium} {
-  padding: 9px 14px;
+  padding: 10px 6px;
   width: 45%;
   font-size: $base-font-size*0.9;
 }
 @media #{$mq-large} {
-  padding: 9px 14px;
+  padding: 10px 6px;
   width: 45%;
   font-size: 11px;
 }
 @media #{$mq-xlarge} {
-  padding: 9px 14px;
+  padding: 10px 6px;
   width: 45%;
   font-size: 11px;
 }
 @media #{$mq-xxlarge} {
-  padding: 9px 14px;
+  padding: 10px 6px;
   width: 45%;
   font-size: 11px;
 }
