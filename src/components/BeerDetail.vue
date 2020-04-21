@@ -8,12 +8,12 @@
         <h1 class="title">{{beer.name}}</h1>
         <p>{{beer.tagline}}</p>
         <p>{{beer.abv}}% AVB</p>
-        <button class="favourites" v-if="includesBeer() == false" v-on:click="addToFavourites">Add to Favourites</button>
-        <button class="favourites" v-if="includesBeer()" v-on:click="removeFromFavourites" > Remove from Favourites </button>
         <br>
         <p>{{beer.description}}</p>
         <br>
         <p>Ingredients: {{getIngredients()}}</p>
+        <button id="favourite-button" v-if="includesBeer() == false" v-on:click="addToFavourites">Add to Favourites</button>
+        <button id="favourite-button" v-if="includesBeer()" v-on:click="removeFromFavourites" > Remove from Favourites </button>
       </div>
     </div>
   </div>
@@ -95,17 +95,17 @@ export default {
   }
 
   @media #{$mq-xlarge} {
-    height: 670px;
+    height: 650px;
     width: auto;
   }
 
   @media #{$mq-xxwide} {
-    height: 670px;
+    height: 650px;
     width: auto;
   }
 
   @media #{$mq-xxlarge} {
-    height: 900px;
+    height: 850px;
     width: auto;
   }
 
@@ -129,15 +129,47 @@ export default {
   }
 }
 
-.favourites {
+#favourite-button {
   border: none;
+  float: right;
+  font-weight: bold;
   font-family: Avenir;
   color: white;
   background-color: inherit;
   cursor: pointer;
-  font-size: 16px;
-  padding: 10px 0px;
-  margin: 0px;
+  padding: 0px 0px;
+  margin-top: 20px;
+  
+  @media #{$mq-small} {
+   font-size: 11px;
+    width: 150px;
+  }
+
+  @media #{$mq-medium} {
+    font-size: 11px;
+    width: 150px;
+  }
+
+  @media #{$mq-large} {
+    font-size: 11px;
+    width: 150px;
+  }
+
+  @media #{$mq-xlarge} {
+    font-size: 20px;
+    width: 250px;
+  }
+
+  @media #{$mq-xxwide} {
+    font-size: 20px;
+    width: 250px;
+  }
+
+  @media #{$mq-xxlarge} {
+    font-size: 30px;
+    width: 350px;
+  }
+
 }
 
 .beer-content {
@@ -145,27 +177,27 @@ export default {
   padding: 45px;
 
   @media #{$mq-small} {
-
+    font-size: 11px;
   }
 
   @media #{$mq-medium} {
-
+    font-size: 11px;
   }
 
   @media #{$mq-large} {
-  
+    font-size: 14px;
   }
 
   @media #{$mq-xlarge} {
-    font-size: $base-font-size*1.2;
+    font-size: 20px;
   }
 
   @media #{$mq-xxwide} {
-    font-size: $base-font-size*1.2;
+    font-size: 20px;
   }
 
   @media #{$mq-xxlarge} {
-    font-size: $base-font-size*1.6;
+    font-size: 30px;
   }
 
 

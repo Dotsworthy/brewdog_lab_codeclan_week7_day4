@@ -29,7 +29,35 @@
   </div>
   </div>
   <div class="content-wrapper">
-    <beer-detail id="beer-detail" :beer="selectedBeer" :favouriteBeers="favouriteBeers"></beer-detail>
+    <beer-detail v-if="selectedBeer" id="beer-detail" :beer="selectedBeer" :favouriteBeers="favouriteBeers"></beer-detail>
+    <div id="beer-detail" v-if="selectedBeer == null">
+      <h1>Brewdog Beer Catalogue</h1>
+      <p> By Andrew Watson <p>
+      <p> API by PunkApi </p>
+      <br>
+      <p>Welcome to the Brewdog Beer Catalogue. To begin, select a beer from the left hand side. You can also add a beer to your favourites list. As this is an app showcase, these settings aren't saved and will reset when you leave the page. </p>
+      <br>
+      <p>This app was created for CodeClan under the following brief:</p>
+      <br>
+      <p>Your task is to build an app that uses an API to display information on a variety of beers.</p>
+      <br>
+      <h2>MVP</h2> 
+      <p>Your app should be able to:</p>
+      <ul>
+        <li>Allow the user to view all the beers</li>
+        <li>Allow the user to view more detailed information on a selected beer</li>
+        <li>Allow the user to mark beers as 'favourites'</li>
+        <li>Display the user's favourite beers</li>
+        </ul>
+        <br>
+        <h2>Extensions</h2>
+        <ul>
+        <li>Prevent the user from marking the same beer as a favourite more than once</li>
+        <li>Allow the user to deselect favourite beers</li>
+        <li>Display the selected beer's ingredients (without duplicates)</li>
+        <li>The endpoint provided will only return 20 beers at a time. Modify your initial request to fetch all 300+ beers the API provides.</li>
+        </ul>
+    </div>
   </div>
 </div>
 </template>
@@ -114,7 +142,7 @@ export default {
 
 <style lang="scss">
 
-// TODO: fix headers in navigation bar
+// TODO:
 // add splash page with brief
 // add limit for favourites and text
 // search function?
@@ -151,19 +179,19 @@ export default {
   }
 
   @media #{$mq-large} {
-    font-size: $base-font-size*0.8;
+    font-size: 11px;
     line-height: $base-line-height*1.1;
-    grid-template-columns: 27.2em 1fr;
+    grid-template-columns: 350px 1fr;
   }
 
   @media #{$mq-xlarge} {
-    font-size: $base-font-size*1.08;
-    grid-template-columns: 20.2em 1fr;
+    font-size: 14px;
+    grid-template-columns: 350px 1fr;
   }
 
   @media #{$mq-xxlarge} {
     font-size: $base-font-size*1.2;
-    grid-template-columns: 19em 1fr;
+    grid-template-columns: 350px 1fr;
   }
 }
 
@@ -196,7 +224,6 @@ export default {
 }
 
 #beer-detail {
-  padding: $base-content-padding;
   color: white;
   background-color: #49516F;
 
@@ -207,11 +234,12 @@ export default {
     padding: 50px;
   }
   @media #{$mq-large} {
-    padding: $base-content-padding;
+    padding: 100px;
   }
   @media #{$mq-xlarge} {
-    padding: 125px;
+    padding: 100px;
   }
+  
   @media #{$mq-xxlarge} {
     padding: 150px;
   }
@@ -284,6 +312,23 @@ text-decoration: none;
 .tab {
   overflow: hidden;
   text-align: center;
+}
+
+.title {
+  @media #{$mq-small} {
+    font-size: 20px;
+  }
+
+  @media #{$mq-medium} {
+    font-size: 25px;
+  }
+  
+  @media #{$mq-large} {
+    font-size: 35px;
+  }
+
+  
+
 }
 
 </style>

@@ -28,6 +28,7 @@ export default {
 ul {
   list-style-type: none;
   font-weight: bold;
+  margin-top: 10px;
 
 }
 
