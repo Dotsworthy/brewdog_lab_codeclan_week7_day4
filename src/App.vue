@@ -114,7 +114,10 @@ export default {
 
 <style lang="scss">
 
-
+// TODO: fix headers in navigation bar
+// add splash page with brief
+// add limit for favourites and text
+// search function?
 
 * {
   box-sizing: border-box;
