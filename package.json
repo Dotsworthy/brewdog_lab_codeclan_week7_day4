@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "gh-pages-deploy": "node scripts/gh-pages-deploy.js"
   },
   "dependencies": {
     "core-js": "^3.6.4",
@@ -19,7 +20,7 @@
     "sass-loader": "^8.0.2",
     "vue-loader": "^15.9.1",
     "vue-template-compiler": "^2.6.11",
-    "webpack": "^4.42.1"
+    "webpack": "^4.42.1",
+    "execa": "latest"
   }
 }
-       
