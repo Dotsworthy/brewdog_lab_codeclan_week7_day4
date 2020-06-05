@@ -38,10 +38,7 @@
       <p> By Andrew Watson <p>
       <p> API by PunkApi </p>
       <br>
-      <p>Welcome to the Brewdog Beer Catalogue, a desktop web app. To begin, select a beer from the left hand side. You can also add up to 20 beers to your favourites list. As this is an app showcase, these settings aren't saved and will reset when you leave the page. </p>
-      <br>
-      <p>Viewing on mobile? Visit the app on a desktop, laptop or tablet to see its full functionality!
-      <br>
+      <p>Welcome to the Brewdog Beer Catalogue! To begin, select a beer from the left hand side, you can also add up to 20 beers to your favourites list. If you are on mobile, you can view beers in the catalogue by pressing the random beer button. As this is an app showcase, these settings aren't saved and will reset when you leave the page. </p>
       <br>
       <p>This app was created for CodeClan under the following brief:</p>
       <br>
