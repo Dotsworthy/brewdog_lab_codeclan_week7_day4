@@ -2,8 +2,8 @@
   <div v-if="beer" id="BeerDetail">
     <div class="title-wrapper">
       <div class="image-wrapper">
-      <img class="beer-image" v-bind:src="beer.image_url" v-bind:alt="beer.name">
-    </div>
+        <img class="beer-image" v-bind:src="beer.image_url" v-bind:alt="beer.name">
+      </div>
       <div class="beer-content">
         <h1 class="title">{{beer.name}}</h1>
         <p>{{beer.tagline}}</p>
@@ -64,7 +64,16 @@ export default {
 <style lang="scss" scoped>
 
 .image-wrapper {
+
+
+  @media #{$mq-mobile} {
+    height: 220px;
+    width: auto;
+    padding: 10px;
+  }
+  
   @media #{$mq-small} {
+    height: 200px;
     padding: 10px;
   }
 
@@ -80,22 +89,22 @@ export default {
 .beer-image {
 
   @media #{$mq-mobile} {
-    height: 100px;
+    height: 200px;
     width: auto;
   }
 
   @media #{$mq-small} {
-    height: 250px;
+    height: 200px;
     width: auto;
   }
 
   @media #{$mq-medium} {
-    height: 500px;
+    height: 400px;
     width: auto;
   }
 
   @media #{$mq-large} {
-    height: 500px;
+    height: 400px;
     width: auto;
   }
 
@@ -123,6 +132,11 @@ export default {
   width: 100%;
   height: 100%;
 
+  @media #{$mq-mobile} {
+    grid-template-rows: 30% 70%;
+    grid-template-columns: 1fr;
+  }
+
   @media #{$mq-small} {
     grid-template-rows: 30% 70%;
     grid-template-columns: 1fr;
@@ -144,6 +158,12 @@ export default {
   cursor: pointer;
   padding: 0px 0px;
   margin-top: 20px;
+
+   @media #{$mq-mobile} {
+    display: none;
+    position: absolute;
+    top: -9999px;
+  }
   
   @media #{$mq-small} {
    font-size: 11px;

@@ -29,7 +29,9 @@
   </div>
   </div>
   <div class="content-wrapper">
-    <button class='random-button' v-on:click="get_random_beer()">Get Random Beer!</button> 
+    <div class="button-container">
+      <button class='random-button' v-on:click="get_random_beer()"><div class="button-text">Random Beer</div></button> 
+    </div>
     <beer-detail v-if="selectedBeer" id="beer-detail" :beer="selectedBeer" :favouriteBeers="favouriteBeers"></beer-detail>
     <div id="beer-detail" v-if="selectedBeer == null">
       <h1>Brewdog Beer Catalogue</h1>
@@ -38,7 +40,7 @@
       <br>
       <p>Welcome to the Brewdog Beer Catalogue, a desktop web app. To begin, select a beer from the left hand side. You can also add up to 20 beers to your favourites list. As this is an app showcase, these settings aren't saved and will reset when you leave the page. </p>
       <br>
-      <p>Viewing on mobile? Visit the app on a desktop, laptop or tablet to see it's full functionality!
+      <p>Viewing on mobile? Visit the app on a desktop, laptop or tablet to see its full functionality!
       <br>
       <br>
       <p>This app was created for CodeClan under the following brief:</p>
@@ -220,7 +222,6 @@ body {
     display: none;
     position: absolute;
     top: -9999px;
-    // grid-template-rows: 1fr 1fr;
   }
 }
 
@@ -263,7 +264,7 @@ body {
     padding: 50px;
   }
   @media #{$mq-large} {
-    padding: 100px;
+    padding: 50px;
   }
   @media #{$mq-xlarge} {
     padding: 100px;
@@ -288,6 +289,7 @@ background-color: inherit;
 margin: 2px;
 text-align: center;
 text-decoration: none;
+font-weight: bold;
 
 @media #{$mq-small} {
   padding: 10px 6px;
@@ -330,6 +332,7 @@ text-decoration: none;
 
 .content-wrapper {
   display: grid;
+  grid-template-rows: 100px 1fr;
 }
 
 .logo {
@@ -358,8 +361,23 @@ text-decoration: none;
 
 }
 
+.button-container {
+  padding: 10px;
+}
+
 .random-button {
-  width: 350px;
+  font-weight: bold;
+  justify-content: center;
+  align-self: center;
+  height: 75px;
+  width: 75px;
+  background-color: #E63946;
+  border-radius: 50%;
+  // transform: skewY(-11deg);
+}
+
+.button-text {
+  transform: skewY(-11deg);
 }
 
 </style>
