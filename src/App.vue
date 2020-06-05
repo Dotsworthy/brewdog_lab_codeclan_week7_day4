@@ -29,6 +29,7 @@
   </div>
   </div>
   <div class="content-wrapper">
+    <button class='random-button' v-on:click="get_random_beer()">Get Random Beer!</button> 
     <beer-detail v-if="selectedBeer" id="beer-detail" :beer="selectedBeer" :favouriteBeers="favouriteBeers"></beer-detail>
     <div id="beer-detail" v-if="selectedBeer == null">
       <h1>Brewdog Beer Catalogue</h1>
@@ -61,6 +62,7 @@
         <li>The endpoint provided will only return 20 beers at a time. Modify your initial request to fetch all 300+ beers the API provides.</li>
         </ul>
     </div>
+     
   </div>
 </div>
 </template>
@@ -121,6 +123,12 @@ export default {
       .then(res => res.json())
       .then(beers => this.beers = beers)
     },
+    get_random_beer() {
+      fetch('https://api.punkapi.com/v2/beers/random')
+      .then(res => res.json())
+      .then(beer => this.selectedBeer = beer[0])
+   },
+
     openTab(pageName) {
   let index, tabcontent, tablinks;
 
@@ -348,8 +356,10 @@ text-decoration: none;
     font-size: 35px;
   }
 
-  
+}
 
+.random-button {
+  width: 350px;
 }
 
 </style>
