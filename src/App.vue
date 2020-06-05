@@ -35,7 +35,10 @@
       <p> By Andrew Watson <p>
       <p> API by PunkApi </p>
       <br>
-      <p>Welcome to the Brewdog Beer Catalogue. To begin, select a beer from the left hand side. You can also add up to 20 beers to your favourites list. As this is an app showcase, these settings aren't saved and will reset when you leave the page. </p>
+      <p>Welcome to the Brewdog Beer Catalogue, a desktop web app. To begin, select a beer from the left hand side. You can also add up to 20 beers to your favourites list. As this is an app showcase, these settings aren't saved and will reset when you leave the page. </p>
+      <br>
+      <p>Viewing on mobile? Visit the app on a desktop, laptop or tablet to see it's full functionality!
+      <br>
       <br>
       <p>This app was created for CodeClan under the following brief:</p>
       <br>
@@ -150,6 +153,10 @@ export default {
   padding: 0;
 }
 
+body {
+  background-color: #49516F;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -162,6 +169,12 @@ export default {
 
   font-size: $base-font-size;
   line-height: $base-line-height;
+
+  @media #{$mq-mobile} {
+    // font-size: $base-font-size*0.3;
+    // line-height: $base-line-height*0.7;
+    // grid-template-rows: 1fr 1fr;
+  }
 
   @media #{$mq-small} {
     font-size: $base-font-size*0.7;
@@ -194,9 +207,20 @@ export default {
 
 #sidebar-wrapper {
   background-color: #F2F3F4;
+
+  @media #{$mq-mobile} {
+    display: none;
+    position: absolute;
+    top: -9999px;
+    // grid-template-rows: 1fr 1fr;
+  }
 }
 
 #sidebar-content {
+
+  @media #{$mq-mobile} {
+    width: 100%;
+  }
 
   @media #{$mq-small} {
     padding: 25px;

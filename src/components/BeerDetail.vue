@@ -79,6 +79,11 @@ export default {
 
 .beer-image {
 
+  @media #{$mq-mobile} {
+    height: 100px;
+    width: auto;
+  }
+
   @media #{$mq-small} {
     height: 250px;
     width: auto;

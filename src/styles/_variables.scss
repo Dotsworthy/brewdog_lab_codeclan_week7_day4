@@ -8,6 +8,7 @@ $bp-xxlarge: 160em; // 2560px
 
 
 // Media Queries
+$mq-mobile: "(max-width: 767px)";
 $mq-small: "(min-width: #{$bp-small})";
 $mq-medium: "(min-width: #{$bp-medium})";
 $mq-large: "(min-width: #{$bp-large})";
