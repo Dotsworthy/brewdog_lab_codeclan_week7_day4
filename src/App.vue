@@ -257,6 +257,10 @@ body {
   color: white;
   background-color: #49516F;
 
+  @media #{$mq-mobile} {
+    padding: 25px;
+  }
+
   @media #{$mq-small} {
     padding: 25px;
   }
